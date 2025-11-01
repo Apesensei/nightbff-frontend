@@ -8,7 +8,7 @@ const AUTH_TOKEN_KEY = "userAuthToken";
 
 // Create axios instance with default config
 const api = axios.create({
-  baseURL: "https://api.example.com", // Replace with your actual API base URL
+  baseURL: "/api", // Replace with your actual API base URL
   timeout: 10000,
   headers: {
     "Content-Type": "application/json",

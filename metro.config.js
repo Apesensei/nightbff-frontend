@@ -16,4 +16,11 @@ config.resolver.extraNodeModules = {
   '@': path.resolve(__dirname, 'src'),
 };
 
-module.exports = config; 
+// 4. Platform-specific extensions (ensures web uses .web.tsx, native uses .native.tsx)
+config.resolver.sourceExts = [...config.resolver.sourceExts, 'css'];
+config.resolver.platforms = ['web', 'ios', 'android'];
+
+// 5. Remove CSS transformer (Expo web handles CSS natively via webpack)
+// No need for custom transformer; Expo's built-in web support handles CSS
+
+module.exports = config;
